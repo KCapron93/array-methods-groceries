@@ -50,7 +50,7 @@ console.log(getCategories(INVENTORY));
  * @returns {string[]} SKUs of given items
  */
 function getSkus(items) {
-  // TODO
+  return items.map((item) => `${item.id}#${item.name}#${item.name.length}`);
 }
 
 /**
@@ -58,7 +58,7 @@ function getSkus(items) {
  * @returns {Item[]} all items in the "fruit" category
  */
 function getFruits(items) {
-  // TODO
+  return items.filter((item) => item.category === "fruit");
 }
 
 /**
@@ -67,7 +67,7 @@ function getFruits(items) {
  * @returns {Item[]} all items in the given category
  */
 function getItemsByCategory(items, category) {
-  // TODO
+  return items.filter((item) => item.category === category);
 }
 
 /**
@@ -76,16 +76,14 @@ function getItemsByCategory(items, category) {
  * @returns {Item[]} all cheap items
  */
 function getCheapItems(items) {
-  // TODO
+  return items.filter((item) => item.price <= 2.5);
 }
 
 /**
  * @param {Item[]} items
  * @returns {number} the total quantity of all items given
  */
-function countItems(items) {
-  // TODO
-}
+function countItems(items) {}
 
 /**
  * @param {Item[]} items
