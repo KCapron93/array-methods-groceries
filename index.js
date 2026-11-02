@@ -83,14 +83,16 @@ function getCheapItems(items) {
  * @param {Item[]} items
  * @returns {number} the total quantity of all items given
  */
-function countItems(items) {}
+function countItems(items) {
+  return items.reduce((count, item) => count + item.quantity, 0);
+}
 
 /**
  * @param {Item[]} items
  * @returns {number} the cost of purchasing every single item
  */
 function getTotalCost(items) {
-  // TODO
+  return items.reduce((total, item) => total + item.price * item.quantity, 0);
 }
 
 /**
@@ -98,5 +100,7 @@ function getTotalCost(items) {
  * @returns {Item} the item with the highest price
  */
 function getMostExpensiveItem(items) {
-  // TODO
+  return items.reduce((mostExpensive, item) =>
+    item.price > mostExpensive.price ? item : mostExpensive,
+  );
 }
